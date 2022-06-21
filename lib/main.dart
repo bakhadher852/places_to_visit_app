@@ -6,8 +6,14 @@ import './screens/tabs_screen.dart';
 import './screens/trip_detail_screen.dart';
 import './screens/category_trips_screen.dart';
 import './models/trip.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(MyApp());
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  
+  runApp(MyApp());
+}  
 
 class MyApp extends StatefulWidget {
   @override
